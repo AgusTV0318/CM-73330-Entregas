@@ -48,3 +48,27 @@ header p {
     padding: 20px;
 }
 
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    padding: 1rem;
+}
+
+.container h1 {
+    color: #007bff;
+}
+
+img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        text-align: center;
+    }
+}
+
