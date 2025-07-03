@@ -1,0 +1,16 @@
+@mixin flex-center($dir: row, $jc: center, $ai: center) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin respond-md {
+    @media (min-width: $breakpoint-md) {
+        @content;
+    }
+}
+
+@mixin animate($name, $dur: 0.5s, $timing: ease, $delay: 0s) {
+    animation: $name $dur $timing $delay both;
+}

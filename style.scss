@@ -1,0 +1,193 @@
+@use 'variables' as v;
+@use 'mixins' as *;
+@use 'extend' as *;
+@use 'animacion' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font: 16px/1.5 #{v.$font-stack};
+    background-color: v.$primary;
+    color: v.$text-color;
+    @include animate(fadeIn, 1s);
+}
+header.site-ground {
+    background: v.$accent;
+
+    .container {
+        @include flex-center(row, space-between);
+        padding: 1rem;
+    }
+ 
+    .logo {
+        font-size: 1.5rem;
+        color: v.$text;
+        transition: transform v.$transtion;
+
+        &:hover {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+nav ul {
+    @include flex-center;
+    gap: 1.5rem;
+
+    li a {
+        color: v.$text-color;
+        position: relative;
+        transition: color v.$transtion;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: v.$secondary;
+            transition: width v.$transtion;
+        }
+        &:hover {
+            color: v.$secondary;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 2%;
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        @include animate(slideIn,0.7s, ease-out, 0.2s);
+    }
+
+    .btn-primary {
+        background: v.$secondary;
+        color: v.$text;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 0.3rem;
+        transition: transform v.$transtion;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+        
+        .container {
+            @include flex-center(row, center);
+            gap: 0.5rem;
+        }
+    }
+}
+
+.servicios {
+    padding: 3rem 2%;
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+    }
+
+    .servicios-card {
+        @extend %card;
+
+        h3 {
+            margin-top: 0;
+            @include animate(slideIn, 0.5s);
+        }
+
+        p {
+            line-height: 1.4;
+        }
+    }
+}
+
+.faq {
+    padding: 3rem 2%;
+
+    .accordion {
+        .item {
+            margin-bottom: 1rem;
+
+            h4 {
+                background: v.$accent;
+                color: v.$text;
+                padding: 0.5rem;
+                cursor: pointer;
+            }
+
+            .content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height v.$transtion ease;
+            }
+
+            &.active .content {
+                max-height: 150px;;
+            }
+        }
+    }
+}
+
+.sobrenosotros 
+.contacto {
+    padding: 3rem 2%;
+
+    .container {
+        @include flex-center(column, flex-start);
+        gap: 1rem;
+    }
+
+    .contacto-form {
+        display: grid;
+        gap: 1rem;
+        max-width: 500px;
+        margin: 0 auto;
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.25rem;
+        }
+
+        .btn-secondary {
+            background: v.$secondary;
+            color: v.$text;
+            padding: 0.75rem;
+            border: none;
+            transition: background v.$transtion;
+        }
+
+        &:hover {
+            background: darken(v.$accent, 10%);
+        }
+    }
+}
+
+footer .site-footer {
+    background: darken(v.$primary, 5%);
+    text-align: center;
+    padding: 1rem 2%;
+}
+
+p {
+    font-size: 0.9rem;
+}
