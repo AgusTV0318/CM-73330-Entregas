@@ -25,25 +25,49 @@
     </div>
   </nav>
 
-  <main class="container my-4">
-    <div class="row g-4">
-      <div class="col-md-6">
-        <section class="card p-4">
-          <h2>Bienvenido a GeSports</h2>
-          <p>Donde podrás encontrar tu modo de entrenar</p>
-          <button class="btn btn-primary w-100">Ver Más</button>
-        </section>
-      </div>
-
-      <div class="col-md-6">
-        <section class="card p-4">
-          <h2>Productos destacados</h2>
-          <p>Indumentarias y accesorios para deportistas de todos los niveles.</p>
-          <button class="btn btn-primary w-100">Ver Articulos</button>
-        </section>
+<main class="container py-4">
+  <div class="row align-items-center g-4 mb-4">
+    <div class="col-md-6">
+      <img src="img/home.jpg" alt="Bienvenidos a GeSports" class="img-fluid rounded shadow">
+    </div>
+    <div class="col-md-6">
+      <div class="card p-4">
+        <h2 class="mb-3">Bienvenidos a GeSports</h2>
+        <p>En GeSports te brindamos lo mejor en tecnología deportiva, entrenamiento personalizado y organización de eventos para potenciar tu rendimiento.</p>
+        <p>¡Formá parte de nuestra comunidad y llevá tu juego al siguiente nivel!</p>
       </div>
     </div>
-  </main>
+  </div>
+
+  <div class="accordion" id="indexAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="index1">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIndex1">
+          ¿Qué es GeSports?
+        </button>
+      </h2>
+      <div id="collapseIndex1" class="accordion-collapse collapse show" data-bs-parent="#indexAccordion">
+        <div class="accordion-body">
+          Somos una empresa dedicada al deporte y la innovación, con foco en el alto rendimiento y la comunidad.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="index2">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIndex2">
+          ¿Cómo puedo unirme?
+        </button>
+      </h2>
+      <div id="collapseIndex2" class="accordion-collapse collapse" data-bs-parent="#indexAccordion">
+        <div class="accordion-body">
+          Podés contactarnos a través del formulario, redes sociales o visitando nuestras sedes. ¡Te esperamos!
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
 
   <footer class="bg-primary text-white text-center p-3 mt-4">
     <p>© 2025 GeSports. Todos los derechos reservados.</p>
