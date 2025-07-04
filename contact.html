@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GeSports - Contacto</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="bg-primary text-white text-center p-4">
+    <h1>Contacto GeSports</h1>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <div class="container-fluid justify-content-center gap-2 py-2">
+      <a class="btn btn-dark text-white" href="index.html">Inicio</a>
+      <a class="btn btn-dark text-white" href="services.html">Servicios</a>
+      <a class="btn btn-dark text-white" href="faq.html">FAQ</a>
+      <a class="btn btn-dark text-white" href="about.html">Acerca</a>
+      <a class="btn btn-dark text-white" href="contact.html">Contacto</a>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <div class="card p-4 mb-4">
+      <h2>Formulario de contacto</h2>
+      <form>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+      </form>
+    </div>
+
+    <div class="accordion" id="contactAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="cont1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1">
+            ¿Dónde estamos?
+          </button>
+        </h2>
+        <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#contactAccordion">
+          <div class="accordion-body">Nuestras oficinas principales están en CABA, Pasaje Bollini al 1300, Argentina.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="cont2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">
+            ¿Horario de atención?
+          </button>
+        </h2>
+        <div id="c2" class="accordion-collapse collapse" data-bs-parent="#contactAccordion">
+          <div class="accordion-body">Lunes a viernes de 12 a 19 hs y Sábados de 9 a 15hs.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-primary text-white text-center p-3 mt-4">
+    <p>© 2025 GeSports. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
