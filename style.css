@@ -152,5 +152,34 @@ footer {
     font-size: 1rem;
   }
 }
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.contact-form label {
+  font-weight: bold;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: inherit;
+  resize: vertical;
+}
+.contact-form button {
+  align-self: flex-end;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: #30475e;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.contact-form button:hover {
+  background-color: rgb(90.6666666667, 0, 204);
+}
 
 /*# sourceMappingURL=style.css.map */
