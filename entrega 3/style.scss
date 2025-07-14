@@ -1,0 +1,153 @@
+@use 'variables' as v;
+@use 'mixins' as m; 
+@use 'extends' as e;
+
+body {
+  margin: 0;
+  background-color: v.$dark-color;
+  color: v.$light-color;
+  font-family: v.$font-stack;
+  line-height: 1.6;
+}
+
+header {
+  background-color: v.$primary-color;
+  padding: 1rem 2rem;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    @include m.responsive-text(24, 36);
+    animation: fade-in 0.5s ease-out;
+  }
+}
+
+nav {
+  background: v.$secondary-color;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  a {
+    color: v.$dark-color;
+    text-decoration: none;
+    font-weight: bold;
+    @include m.transition(color);
+    &:hover {
+      color: v.$text-color;
+    }
+  }
+}
+
+main {
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  @extend %card-style;
+  animation: fade-in 1s ease;
+}
+
+button {
+  @extend %button-style;
+  animation: pulse 2s infinite;
+}
+
+footer {
+  background-color: v.$primary-color;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: v.$text-color;
+  position: sticky;
+  bottom: 0;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1.10);
+  }
+}
+
+.util {
+  &-text-center {
+    text-align: center;
+  }
+  &-mt-2 {
+    margin-top: 2rem;
+  }
+  &-mb-2 {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  
+  main {
+    grid-template-columns: 1fr !important;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+
+  .card {
+    padding: 1rem !important;
+  }
+
+  button {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+  }
+
+  main {
+    padding: 0.5rem;
+  }
+
+  .card h2 {
+    font-size: clamp(18px, 4vw, 22px);
+  }
+
+  .util-text-center {
+    font-size: 1rem;
+  }
+}
